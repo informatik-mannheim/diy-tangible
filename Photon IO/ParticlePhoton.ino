@@ -115,7 +115,6 @@ int relaisToggle(String command) {
         digitalWrite(dig6,LOW);
         return 000;
         }
-  
     else {
         return -2;
     }
