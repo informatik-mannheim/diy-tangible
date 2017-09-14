@@ -79,7 +79,7 @@ namespace WpfTouchFrameSample
 
 			if (_currentTouchcode != Touchcode.None)
 			{
-				_canvas.RenderTransform = new RotateTransform(_currentTouchcode.Angle, 1800, 150);
+				_canvas.RenderTransform = new RotateTransform(_currentTouchcode.Angle, 800, 150);
 			}
 		}
 
@@ -97,7 +97,7 @@ namespace WpfTouchFrameSample
 		{
 			_currentTouchcode = _touchcodeAPI.Check(GetTouchpoints());
 
-			Redraw();
+		Redraw();
 		}
 
 		void OnTouchUp(object sender, TouchEventArgs e)
@@ -149,22 +149,22 @@ namespace WpfTouchFrameSample
 		{
 			Canvas canvas = new Canvas();
 
-			canvas.Children.Add(GetPointAt(new Point(1750 + 33.3, 100)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 66.6, 100)));
-			canvas.Children.Add(GetPointAt(new Point(1750, 100 + 33.3)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 33.3, 100 + 33.3)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 66.6, 100 + 33.3)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 100, 100 + 33.3)));
-			canvas.Children.Add(GetPointAt(new Point(1750, 100 + 66.6)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 33.3, 100 + 66.6)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 66.6, 100 + 66.6)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 100, 100 + 66.6)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 33.3, 100 + 100)));
-			canvas.Children.Add(GetPointAt(new Point(1750 + 66.6, 100 + 100)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 33.3, 100)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 66.6, 100)));
+			canvas.Children.Add(GetPointAt(new Point(750, 100 + 33.3)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 33.3, 100 + 33.3)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 66.6, 100 + 33.3)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 100, 100 + 33.3)));
+			canvas.Children.Add(GetPointAt(new Point(750, 100 + 66.6)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 33.3, 100 + 66.6)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 66.6, 100 + 66.6)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 100, 100 + 66.6)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 33.3, 100 + 100)));
+			canvas.Children.Add(GetPointAt(new Point(750 + 66.6, 100 + 100)));
 
 			// Koordinatensystem
-			canvas.Children.Add(DrawLine(new Point(1750, 100), new Point(1750, 200)));
-			canvas.Children.Add(DrawLine(new Point(1750, 200), new Point(1850, 200)));
+			canvas.Children.Add(DrawLine(new Point(750, 100), new Point(750, 200)));
+			canvas.Children.Add(DrawLine(new Point(750, 200), new Point(850, 200)));
 
 			return canvas;
 		}
@@ -173,7 +173,7 @@ namespace WpfTouchFrameSample
 		{
 			var polygon = new Polygon();
 			polygon.Stroke = System.Windows.Media.Brushes.White;
-			polygon.Fill = System.Windows.Media.Brushes.LightSeaGreen;
+			//polygon.Fill = System.Windows.Media.Brushes.LightSeaGreen;
 			polygon.StrokeThickness = 2;
 			polygon.HorizontalAlignment = HorizontalAlignment.Left;
 			polygon.VerticalAlignment = VerticalAlignment.Center;
@@ -186,9 +186,9 @@ namespace WpfTouchFrameSample
 		{
 			var polygon = new Polygon();
 			polygon.Visibility = Visibility.Hidden;
-			polygon.Stroke = System.Windows.Media.Brushes.Yellow;
+			polygon.Stroke = System.Windows.Media.Brushes.MediumSpringGreen;
 			polygon.Fill = System.Windows.Media.Brushes.Red;
-			polygon.StrokeThickness = 5;
+			polygon.StrokeThickness = 20;
 			polygon.HorizontalAlignment = HorizontalAlignment.Left;
 			polygon.VerticalAlignment = VerticalAlignment.Center;
 			polygon.Points.Add(point);
