@@ -4,117 +4,143 @@
 
 
 int dig0 = D0;    // relais on digital out  
-int dig1 = D1;
-int dig2 = D2;       
-int dig3 = D3;
-int dig4 = D4;
+int dig2 = D2; 
 int dig5 = D5;
-int dig6 = D7;
+int dig7 = D7;
 
 void setup()
 {
    // Pin configuration
    pinMode(dig0, OUTPUT);
-   pinMode(dig1, OUTPUT);
    pinMode(dig2, OUTPUT);
-   pinMode(dig3, OUTPUT);
-   pinMode(dig4, OUTPUT);
    pinMode(dig5, OUTPUT);
-   pinMode(dig6, OUTPUT);
+   pinMode(dig7, OUTPUT);
  
   // This is saying that when we ask the cloud for the function "led", it will employ the function relaisToggle() from this app.
    Particle.function("led",relaisToggle);
    
    // Set Pins to LOW when it starts 
    digitalWrite(dig0, LOW);
-   digitalWrite(dig1, LOW);
    digitalWrite(dig2, LOW);
-   digitalWrite(dig3, LOW);
-   digitalWrite(dig4, LOW);
    digitalWrite(dig5, LOW);
-   digitalWrite(dig6, LOW);
+   digitalWrite(dig7, LOW);
 
 }
 
 int relaisToggle(String command) {
 
-    if (command=="D2") {
-        digitalWrite(dig2,HIGH);
-        return 2;
-        }
-        
-    if(command=="D2LOW"){
-        digitalWrite(dig2, LOW);
-        return 22;
-        }
-
-    if(command=="D0"){
-        digitalWrite(dig0, HIGH);
-        return 0;
-        }
-        
-    if(command=="D0LOW"){
-        digitalWrite(dig0, LOW);
-        return 00;
-    }
-    
-       if(command=="D1"){
-        digitalWrite(dig1, HIGH);
+    if (command=="Set Touchcode 1") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,HIGH);
         return 1;
-        }
-        
-    if(command=="D1LOW"){
-        digitalWrite(dig1, LOW);
+    }
+    if (command=="Set Touchcode 2") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,LOW);
+        return 2;
+    }
+    if (command=="Set Touchcode 3") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,LOW);
+        return 3;
+    }    
+    if (command=="Set Touchcode 4") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,LOW);
+        return 4;
+    }
+    if (command=="Set Touchcode 5") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,HIGH);
+        return 5;
+    }
+    if (command=="Set Touchcode 6") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,HIGH);
+        return 6;
+    }
+    if (command=="Set Touchcode 7") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,LOW);
+        return 7;
+    }
+    if (command=="Set Touchcode 8") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,LOW);
+        return 8;
+    }
+    if (command=="Set Touchcode 9") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,HIGH);
+        return 9;
+    }    
+    if (command=="Set Touchcode 10") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,LOW);
+        return 10;
+    }
+    if (command=="Set Touchcode 11") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,HIGH);
         return 11;
     }
-      if(command=="D3"){
-        digitalWrite(dig3, HIGH);
-        return 3;
-        }
-        
-    if(command=="D3LOW"){
-        digitalWrite(dig3, LOW);
-        return 33;
-    }
-        
-    if(command=="D4"){
-        digitalWrite(dig4, HIGH);
-        return 4;
-        }
-    
-    if(command=="D4LOW"){
-        digitalWrite(dig4, LOW);
-        return 44;
-    }
-        if(command=="D5"){
-        digitalWrite(dig5, HIGH);
-        return 5;
-        }
-    
-    if(command=="D5LOW"){
-        digitalWrite(dig5, LOW);
-        return 55;
-    }  
-          if(command=="D6"){
-        digitalWrite(dig6, HIGH);
-        return 6;
-        }
-    
-    if(command=="D6LOW"){
-        digitalWrite(dig6, LOW);
-        return 66;
-    } 
-        
-    if (command=="None") {
-        digitalWrite(dig0,LOW);
-        digitalWrite(dig1,LOW);
-        digitalWrite(dig2,LOW);
-        digitalWrite(dig3,LOW);
-        digitalWrite(dig4,LOW);
+    if (command=="Set Touchcode 12") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,HIGH);
         digitalWrite(dig5,LOW);
-        digitalWrite(dig6,LOW);
-        return 000;
-        }
+        digitalWrite(dig7,HIGH);
+        return 12;
+    }
+    if (command=="Set Touchcode 13") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,LOW);
+        return 13;
+    }
+    if (command=="Set Touchcode 14") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,HIGH);
+        return 14;
+    }
+    if (command=="Set Touchcode 15") {
+        digitalWrite(dig0,HIGH);
+        digitalWrite(dig2,HIGH);
+        digitalWrite(dig5,HIGH);
+        digitalWrite(dig7,HIGH);
+        return 15;
+    }
+    if (command=="Set Touchcode 16") {
+        digitalWrite(dig0,LOW);
+        digitalWrite(dig2,LOW);
+        digitalWrite(dig5,LOW);
+        digitalWrite(dig7,LOW);
+        return 16;
+    }
     else {
         return -2;
     }
